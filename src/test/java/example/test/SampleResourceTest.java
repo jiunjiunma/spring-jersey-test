@@ -19,7 +19,6 @@ import example.service.SampleService;
  * Time: 11:08 AM
  */
 @Configuration
-@ComponentScan(basePackageClasses={SampleResource.class})
 public class SampleResourceTest extends SpringContextAwareJerseyTest {
     private SampleService mockSampleService;
 
@@ -27,6 +26,11 @@ public class SampleResourceTest extends SpringContextAwareJerseyTest {
     @Bean
     static public SampleService sampleService() {
         return Mockito.mock(SampleService.class);
+    }
+
+    @Bean
+    static public SampleResource sampleResource() {
+        return new SampleResource();
     }
 
     // get the mock objects from the internal servlet context, because
