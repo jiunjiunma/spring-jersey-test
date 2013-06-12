@@ -28,6 +28,11 @@ public class SampleResourceTest extends SpringContextAwareJerseyTest {
         return Mockito.mock(SampleService.class);
     }
 
+    /**
+     * Create our own resource here so only the test resource is loaded. If
+     * we use @ComponentScan, the whole package will be scanned and more
+     * resources may be loaded (which is usually NOT what we want in a test).
+     */
     @Bean
     static public SampleResource sampleResource() {
         return new SampleResource();
