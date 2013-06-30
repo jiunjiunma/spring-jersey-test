@@ -13,7 +13,7 @@ import example.service.SampleService;
 
 /**
  * Same test as SampleResourceTest, further simplified. In this case, when the
- * mock sample service is created, all the test behavior is also set.
+ * mock sample service is created, all the test responses are also set.
  *
  * Date: 6/30/13
  * Time: 10:16 AM
